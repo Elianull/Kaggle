@@ -1,0 +1,8 @@
+Given the tweet text provided by the user, determine whether it represents a real disaster (actual events like earthquakes, floods, fires, etc.) or not. Your response should be a single number: 1 if the tweet is about a real disaster, and 0 if it is not about a real disaster. Consider the context, wording, and any potential for metaphorical language that might indicate the tweet is not referring to an actual disaster. Please analyze the tweet carefully and provide your classification based on the content.
+
+Instructions to Language Model:
+Review the tweet carefully.
+Consider the use of specific disaster-related keywords and assess whether they are used to describe real events or metaphorically.
+Ensure no additional text, explanation, or content is added beyond this number.
+
+Reply CONFIRM if you understand.
