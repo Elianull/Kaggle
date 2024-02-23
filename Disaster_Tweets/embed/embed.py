@@ -3,6 +3,7 @@ from angle_emb import AnglE
 import torch
 import numpy as np
 import sys
+from tqdm import tqdm
 
 def format_row_as_string(row):
     row_string = f"Tweet ID: {row['id']}, "
@@ -24,7 +25,7 @@ def main(csv_file):
     # Function to encode summaries using AnglE
     def encode(strings, batch_size=100):
         all_embeddings = []
-        for i in range(0, len(strings), batch_size):
+        for i in tqdm(range(0, len(strings), batch_size)):
             batch = [string for string in strings[i:i + batch_size] if string]
             batch_embeddings = angle.encode(batch, to_numpy=True)
             all_embeddings.append(batch_embeddings)

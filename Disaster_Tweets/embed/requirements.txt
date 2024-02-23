@@ -3,3 +3,5 @@ torch
 h5py
 numpy
 transformers
+angle_emb
+tqdm

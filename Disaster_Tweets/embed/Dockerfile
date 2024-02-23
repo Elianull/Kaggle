@@ -1,6 +1,6 @@
-#docker run --gpus all -v ${PWD}:/usr/src/app sfr-embed python embed.py data/REPLACE.csv
+#MSYS_NO_PATHCONV=1 docker run --gpus all -v ${PWD}:/usr/src/app -v ${HOME}/.cache:/root/.cache sfr-embed python embed/embed.py data/train.csv
 # Use an official NVIDIA CUDA image with CUDA 12.3 and cuDNN as a parent image
-FROM nvidia/cuda:12.3.1-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:12.3.1-runtime-ubuntu20.04
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
