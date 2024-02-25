@@ -4,6 +4,7 @@ import torch
 import numpy as np
 import sys
 from tqdm import tqdm
+import os
 
 def format_row_as_string(row):
     row_string = f"Tweet ID: {row['id']}, "
@@ -35,8 +36,11 @@ def main(csv_file):
     # Pass the formatted strings to the encode function
     encoded_vectors = encode(formatted_strings)
     print("Encoding Complete.")
-    np.save("data/encoded_vectors.npy", encoded_vectors)
-    print("Encoded vectors saved to data/encoded_vectors.npy")
+
+    base_name = os.path.splitext(os.path.basename(csv_file))[0]
+    output_file_name = f"data/encoded_{base_name}.npy"
+    np.save(output_file_name, encoded_vectors)
+    print(f"Encoded vectors saved to {output_file_name}.")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
